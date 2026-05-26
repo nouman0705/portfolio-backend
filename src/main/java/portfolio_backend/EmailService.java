@@ -15,11 +15,13 @@ public class EmailService {
     private String sendGridApiKey;
 
     public void sendContactEmail(ContactRequest request) throws Exception {
-        Email from = new Email("nouman741740@gmail.com");
+        Email from = new Email(request.getEmail(), request.getFirstName());
         Email to = new Email("nouman741740@gmail.com");
         Content content = new Content("text/plain",
-            "Name: " + request.getFirstName() +
+            "FirstName: " + request.getFirstName() +
+            "\nLastName: " + request.getLastName()+
             "\nEmail: " + request.getEmail() +
+            "\nSubject: " + request.getSubject() +
             "\nMessage: " + request.getMessage());
         Mail mail = new Mail(from, request.getSubject(), to, content);
 

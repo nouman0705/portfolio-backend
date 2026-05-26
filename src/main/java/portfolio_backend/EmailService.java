@@ -15,7 +15,7 @@ public class EmailService {
     private String sendGridApiKey;
 
     public void sendContactEmail(ContactRequest request) throws Exception {
-        Email from = new Email(request.getEmail(), request.getFirstName());
+        Email from = new Email("nouman0705@gmail.com");
         Email to = new Email("nouman741740@gmail.com");
         Content content = new Content("text/plain",
             "FirstName: " + request.getFirstName() +

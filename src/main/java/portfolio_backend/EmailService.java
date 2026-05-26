@@ -18,11 +18,11 @@ public class EmailService {
         Email from = new Email("nouman0705@gmail.com");
         Email to = new Email("nouman741740@gmail.com");
         Content content = new Content("text/plain",
-            "FirstName: " + request.getFirstName() +
-            "\nLastName: " + request.getLastName()+
-            "\nEmail: " + request.getEmail() +
-            "\nSubject: " + request.getSubject() +
-            "\nMessage: " + request.getMessage());
+            "First Name : " + request.getFirstName() +
+            "\nLast Name : " + request.getLastName()+
+            "\nEmail : " + request.getEmail() +
+            "\nSubject : " + request.getSubject() +
+            "\nMessage : " + request.getMessage());
         Mail mail = new Mail(from, request.getSubject(), to, content);
 
         SendGrid sg = new SendGrid(sendGridApiKey);
